@@ -15,9 +15,9 @@
 
 <p>Os dispositivos de memória de um computador típico consistem em dois tipos: a memória interna (ou principal, usualmente chips de silício) e a memória externa (ou secundária, usualmente disco ou fitas magnéticas). A memória interna é uma memória volátil com endereçamento direto (RAM) enquanto a memória externa, por outro lado, é uma memória não-volátil com endereçamento indireto. Considerando essas propriedades, em suma, a memória interna é mais cara (mais de uma grandeza mais cara por bit armazenado), tem alta velocidade (tempo de acesso de nano segundos) e pouca capacidade em contraste com a memória externa, que é mais barata, tem baixa velocidade (tempo de acesso de mili segundos) e grande capacidade de armazenamento (no mínimo duas ordens de grandeza maior que a quantidade de memória principal).</p>
 
-<p>Dessa forma, a fim de contornar gargalos de capacidade de armazenamento, custos e, sobretudo, tempo de acesso, a Árvore B é uma estrutura de dados desenvolvida para otimizar o acesso a dispositivos de armazenamento secundário, como discos magnéticos. É aplicada em contextos em que o volume de informação é muito grande para que as chaves possam ser armazenadas somente em memória principal. Sendo assim, somente algumas páginas da árvore são carregadas em memória principal e as demais em memória secundária.</p>
+<p>Dessa forma, a fim de superar gargalos de capacidade de armazenamento, custos e, sobretudo, tempo de acesso, a Árvore B é uma estrutura de dados desenvolvida para otimizar o acesso a dispositivos de armazenamento secundário, como discos magnéticos. É aplicada em contextos em que o volume de informação é muito grande para que as chaves possam ser armazenadas somente em memória principal. Sendo assim, somente algumas páginas da árvore são carregadas em memória principal e as demais em memória secundária.</p>
 
-<p>Muitos sistemas de bancos de dados usam árvores B ou variações da mesma para armazenar informações. Dentre suas propriedades ela permite a inserção, remoção e busca de chaves numa complexidade de tempo logarítmica e, por esse motivo, é muito empregada em aplicações que necessitam manipular grandes quantidades de informação tais como um banco de dados ou um sistemas de arquivos.</p>
+<p>Muitos sistemas de bancos de dados usam árvores B ou variações da mesma para armazenar informações. Dentre suas propriedades ela permite a inserção, remoção e busca de chaves numa complexidade de tempo logarítmica e, por esse motivo, é muito empregada em aplicações que necessitam manipular grandes quantidades de informação tais como banco de dados ou sistemas de arquivos.</p>
 
 Exemplos da aplicação da Árvore B em sistemas de arquivos e bancos de dados:
 * o sistema de arquivos NTFS do Windows,
@@ -61,14 +61,14 @@ Como conseqüência da definição:
 Como foi mencionado acima, cada chave representa um arquivo que contêm 1-10 entradas (CPF,nome,idade). Logo, a inserção e remoção de uma determinada entrada segue a seguinte lógica:
 - se o arquivo no qual a entrada a ser inserida contêm < 10 entradas, então a nova entrada é inserida nesse arquivo;
 - se o arquivo no qual a entrada a ser inserida contêm exatamente 10 entradas, então o arquivo está cheio. Uma nova chave e arquivo serão criados com o CPF da nova entrada;
-- se o arquivo no qual a entrada a ser removida contêm > 2 entradas, então a entrada é simplesmente removida do arquivo;
+- se o arquivo no qual a entrada a ser removida contêm > 1 entradas, então a entrada é simplesmente removida do arquivo;
 - se o arquivo no qual a entrada a ser removida contêm exatamente 1 entrada, significa que essa entrada é a entrada a ser removida e que após sua remoção o arquivo ficará vazio. Assim, após sua remoção a chave representada por esse arquivo será removida da árvore, assim como o respectivo arquivo.
 
 No menu principal há opções de teste que serão usadas para exemplificar Inserção, Remoção e Pesquisa.
 
 <h3>Pesquisa</h3>
 
-Na opção 5, Testar pesquisar a partir de teste-pesquisa.txt , os CPFs presentes no arquivo são simplesmente pesquisados na árvore. No arquivo estão presentes todos os CPFs inseridos no processo de inserção da database.txt, logo é esperado que todos os CPFs sejam encontrados na pesquisa.
+Na opção 5, Testar pesquisar a partir de teste-pesquisa.txt , os CPFs presentes no arquivo são simplesmente pesquisados na árvore. No arquivo estão presentes todos os CPFs inseridos no processo de inserção da database.txt, logo é esperado que todos os CPFs contidos no arquivo teste sejam encontrados na pesquisa (se nenhuma remoção foi realizada).
 
 A pesquisa é feita a partir do CPF. Se encontrado, exibe a mensagem "CPF XXXXXXXXXX encontrado!" seguida do CPF, nome e idade.
 
@@ -78,7 +78,7 @@ A pesquisa é feita a partir do CPF. Se encontrado, exibe a mensagem "CPF XXXXXX
 
 <h3>Inserção</h3>
 
-Na opção 4, Testar inserir a partir de teste-inserir.txt, as entradas presentes no arquivo são inseridas na árvore. Neste exemplo ocorre estouro de arquivo, isto é, ao inserir as entradas os arquivos correspondetes excedem a capacidade máxima de 10 entradas. Por conseguinte, novas chaves são inseridas na árvore com o CPF da entrada que provocou o estouro.
+Na opção 4, Testar inserir a partir de teste-inserir.txt, as entradas presentes no arquivo são inseridas na árvore. Neste exemplo ocorre estouro de arquivo, isto é, ao inserir as entradas os arquivos correspondetes excedem a capacidade máxima de 10 entradas. Por conseguinte, novas chaves são inseridas na árvore nomeadas com o CPF da entrada que provocou o estouro.
 
 | ![insercao.png](./images/insercao.png?width="400") | 
 |:--:| 
@@ -92,7 +92,7 @@ Vale ressaltar também que à medida que as entradas são inseridas nos arquivos
 
 | ![teste-inserir.png](./images/teste-inserir.png?width="400") | 
 |:--:| 
-| À esquerda o arquivo utilizado para testar inserções, teste-inserir.txt. À direita o arquivo 1600000000, em /arquivos.|
+| À esquerda parte do arquivo utilizado para testar inserções, teste-inserir.txt. À direita o arquivo 1600000000, em /arquivos |
 
 <h3>Remoção</h3>
 
