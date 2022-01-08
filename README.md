@@ -32,16 +32,34 @@ Exemplos da aplicação da Árvore B em sistemas de arquivos e bancos de dados:
 
 <h2 align="left">Árvore B: Definição</h2>
 
-Seja t a ordem da árvore B. Uma árvore B de ordem t é uma árvore ordenada que é vazia, ou que satisfaz as seguintes condições: /
+Seja t a ordem da árvore B. Uma árvore B de ordem t é uma árvore ordenada que é vazia, ou que satisfaz as seguintes condições:
 1. A raiz é uma folha ou tem no mínimo dois filhos;
 2. Cada nó diferente do raiz e das folhas possui no mínimo t filhos;
 3. Cada nó tem no máximo 2t filhos;
 4. Todas as folhas estão no mesmo nível.
 
-Como conseqüência da definição: /
+Como conseqüência da definição:
 - Cada nó (página) possui entre t-1 e 2t-1 chaves, exceto o raiz que possui entre 1 e 2t-1 chaves.
 
-[Exemplo de árvore B de ordem 2](./b-tree-m=2#gh-light-mode-only)
+| ![b-tree-m=2.png](./images/b-tree-m=2.png?width="550") | 
+|:--:| 
+| Exemplo de árvore B de ordem 2 |
+
+<h2 align="left">Descrição e Implementação</h2>
+
+<h4>Descrição:</h4>
+
+- criar uma tabela randômica de 1.000 entradas contendo CPF, nome e idade;
+- inserir as 1.000 entradas na árvore B, de ordem 2, subdividindo-as em chaves (arquivos) que devem conter 1-10 entradas;
+- prover um menu que consiga Inserir, Remover e Pesquisar pessoas nesse grupo de arquivos, mantendo a integridade da estrutura e tamanho máximo do arquivo.
+
+<h4>Implementação:</h4>
+
+<p>Primeiramente, uma tabela de 1.000 entradas contendo CPF, nome, idade foi gerada randomicamente em um editor de planilha. A tabela consiste no banco de dados do programa e está localizada no diretório /data com o nome database.txt. Ao iniciarmos o programa, a função InsereDatabase insere a database.txt na ávore B, obedecendo a condição imposta de subdividir as 1.000 entradas em chaves (arquivos) contendo 1-10 entradas. Dessa forma, com a inserção de 1.000 entradas um total de 100 chaves são inseridas na árvore, cada qual representa um arquivo presente na memória secundária com 10 entradas cada.</p>
+
+| ![b-tree-m=2.png](./images/exemplo-arquivo.png?width="400") | 
+|:--:| 
+| Exemplo de arquivo. O cpf da 1ª entrada de todo arquivo representa a chave inserida na árvore |
 
 <h2 align="left">Referências</h2>
 
