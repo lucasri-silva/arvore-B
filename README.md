@@ -78,7 +78,7 @@ A pesquisa é feita a partir do CPF. Se encontrado, exibe a mensagem "CPF XXXXXX
 
 <h3>Inserção</h3>
 
-Na opção 4, Testar inserir a partir de teste-inserir.txt, as entradas presentes no arquivo são inseridas na árvore. Neste exemplo ocorre estouro de arquivo, isto é, ao inserir as entradas os arquivos correspondetes excedem a capacidade máxima de 10 entradas. Por conseguinte, novas chaves são inseridas na árvore nomeadas com o CPF da entrada que provocou o estouro.
+Na opção 4, Testar inserir a partir de teste-inserir.txt, as entradas presentes no arquivo são inseridas na árvore. Neste exemplo ocorre estouro de arquivo, isto é, ao inserir as entradas os arquivos correspondentes excedem a capacidade máxima de 10 entradas. Por conseguinte, novas chaves são inseridas na árvore nomeadas com o CPF da entrada que provocou o estouro.
 
 | ![insercao.png](./images/insercao.png?width="400") | 
 |:--:| 
