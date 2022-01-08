@@ -56,7 +56,7 @@ Como conseqüência da definição:
 |:--:| 
 | Exemplo de arquivo. O cpf da 1ª entrada de todo arquivo representa a chave inserida na árvore |
 
-<h2>Inserção, Pesquisa e Remoção</h2>
+<h2>Pesquisa, Inserção e Remoção</h2>
 
 Como foi mencionado acima, cada chave representa um arquivo que contêm 1-10 entradas (CPF,nome,idade). Logo, a inserção e remoção de uma determinada entrada segue a seguinte lógica:
 - se o arquivo no qual a entrada a ser inserida contêm < 10 entradas, então a nova entrada é inserida nesse arquivo;
@@ -65,6 +65,16 @@ Como foi mencionado acima, cada chave representa um arquivo que contêm 1-10 ent
 - se o arquivo no qual a entrada a ser removida contêm exatamente 1 entrada, significa que essa entrada é a entrada a ser removida e que após sua remoção o arquivo ficará vazio. Assim, após sua remoção a chave representada por esse arquivo será removida da árvore, assim como o respectivo arquivo.
 
 No menu principal há opções de teste que serão usadas para exemplificar Inserção, Remoção e Pesquisa.
+
+<h3>Pesquisa</h3>
+
+Na opção 5, Testar pesquisar a partir de teste-pesquisa.txt , os CPFs presentes no arquivo são simplesmente pesquisados na árvore. No arquivo estão presentes todos os CPFs inseridos no processo de inserção da database.txt, logo é esperado que todos os CPFs sejam encontrados na pesquisa.
+
+A pesquisa é feita a partir do CPF. Se encontrado, exibe a mensagem "CPF XXXXXXXXXX encontrado!" seguida do CPF, nome e idade.
+
+| ![teste-pesquisar.png](./images/teste-pesquisar.png?width="400") | 
+|:--:| 
+| À esquerda o arquivo teste-pesquisa.txt. À direita o output da pesquisa exibindo CPF,nome,idade dos registros pesquisados |
 
 <h3>Inserção</h3>
 
@@ -86,7 +96,7 @@ Vale ressaltar também que à medida que as entradas são inseridas nos arquivos
 
 <h3>Remoção</h3>
 
-Na opção 6, Testar remover a partir de teste-remover.txt, as entradas presentes no arquivo são removidas da árvore. Neste exemplo, conforme as entradas são removidas dos arquivos esses se tornam vazios e são, portanto, removidos de /arquivos, além obviamente de que sua respectiva chave é removida da árvore.
+Na opção 6, Testar remover a partir de teste-remover.txt, as entradas presentes no arquivo são removidas da árvore. Neste exemplo, conforme as entradas são removidas dos arquivos esses se tornam vazios e são, portanto, removidos de /arquivos, além obviamente da respectiva chave ser removida da árvore.
 
 | ![teste-remover.png](./images/teste-remover.png?width="400") | 
 |:--:| 
@@ -94,7 +104,7 @@ Na opção 6, Testar remover a partir de teste-remover.txt, as entradas presente
 
 | ![remocao.png](./images/remocao.png?width="400") | 
 |:--:| 
-| Note que após a remoção do último CPF 15194563598 do arquivo 14712514720 o arquivo fica vazio e, consequentemente, é removido de /arquivos e sua respectiva chave 14712514720 é removida da árvore |
+| Note que após a remoção do último CPF 15194563598 do arquivo 14712514720 o mesmo fica vazio e, consequentemente, é removido de /arquivos e sua respectiva chave 14712514720 é removida da árvore |
 
 | ![arvore-antes-pos-remocao](./images/arvore-antes-pos-remocao.png?width="400") | 
 |:--:| 
