@@ -2,13 +2,8 @@
 
 <p align="center">Implementação da árvore B em banco de dados contendo Cadastro de Pessoa Física (CPF)</p>
 
-- Compilador
+| OS: Ubuntu 20.04.2 LTS | Compilador: gcc version 9.3.0 |
                 
-       gcc version 9.3.0
-- OS
-       
-       Ubuntu 20.04.2 LTS
-
 - Executar
  
         terminal:
@@ -47,19 +42,63 @@ Como conseqüência da definição:
 
 <h2 align="left">Descrição e Implementação</h2>
 
-<h4>Descrição:</h4>
+<h3>Descrição do problema:</h3>
 
 - criar uma tabela randômica de 1.000 entradas contendo CPF, nome e idade;
 - inserir as 1.000 entradas na árvore B, de ordem 2, subdividindo-as em chaves (arquivos) que devem conter 1-10 entradas;
 - prover um menu que consiga Inserir, Remover e Pesquisar pessoas nesse grupo de arquivos, mantendo a integridade da estrutura e tamanho máximo do arquivo.
 
-<h4>Implementação:</h4>
+<h3>Implementação:</h3>
 
 <p>Primeiramente, uma tabela de 1.000 entradas contendo CPF, nome, idade foi gerada randomicamente em um editor de planilha. A tabela consiste no banco de dados do programa e está localizada no diretório /data com o nome database.txt. Ao iniciarmos o programa, a função InsereDatabase insere a database.txt na ávore B, obedecendo a condição imposta de subdividir as 1.000 entradas em chaves (arquivos) contendo 1-10 entradas. Dessa forma, com a inserção de 1.000 entradas um total de 100 chaves são inseridas na árvore, cada qual representa um arquivo presente na memória secundária com 10 entradas cada.</p>
 
-| ![b-tree-m=2.png](./images/exemplo-arquivo.png?width="400") | 
+| ![exemplo-arquivo.png](./images/exemplo-arquivo.png?width="400") | 
 |:--:| 
 | Exemplo de arquivo. O cpf da 1ª entrada de todo arquivo representa a chave inserida na árvore |
+
+<h2>Inserção, Pesquisa e Remoção</h2>
+
+Como foi mencionado acima, cada chave representa um arquivo que contêm 1-10 entradas (CPF,nome,idade). Logo, a inserção e remoção de uma determinada entrada segue a seguinte lógica:
+- se o arquivo no qual a entrada a ser inserida contêm < 10 entradas, então a nova entrada é inserida nesse arquivo;
+- se o arquivo no qual a entrada a ser inserida contêm exatamente 10 entradas, então o arquivo está cheio. Uma nova chave e arquivo serão criados com o CPF da nova entrada;
+- se o arquivo no qual a entrada a ser removida contêm > 2 entradas, então a entrada é simplesmente removida do arquivo;
+- se o arquivo no qual a entrada a ser removida contêm exatamente 1 entrada, significa que essa entrada é a entrada a ser removida e que após sua remoção o arquivo ficará vazio. Assim, após sua remoção a chave representada por esse arquivo será removida da árvore, assim como o respectivo arquivo.
+
+No menu principal há opções de teste que serão usadas para exemplificar Inserção, Remoção e Pesquisa.
+
+<h3>Inserção</h3>
+
+Na opção 4, Testar inserir a partir de teste-inserir.txt, as entradas presentes no arquivo são inseridas na árvore. Neste exemplo ocorre estouro de arquivo, isto é, ao inserir as entradas os arquivos correspondetes excedem a capacidade máxima de 10 entradas. Por conseguinte, novas chaves são inseridas na árvore com o CPF da entrada que provocou o estouro.
+
+| ![insercao.png](./images/insercao.png?width="400") | 
+|:--:| 
+| Exemplo de inserção. Note que o CPF 1600000000 deveria ser inserido no arquivo 1439559022, visto que 1439559022 < 1600000000 < 2070173720. No entanto, o arquivo 1439559022 está cheio. Dessa forma, uma nova chave representada pelo CPF 1600000000 é inserida na árvore e um novo arquivo com o mesmo CPF é criado. O mesmo ocorre para os CPFs 1700000000 e 1800000000 |
+
+| ![arvore-antes-pos-insercao.png](./images/arvore-antes-pos-insercao.png?width="400") | 
+|:--:| 
+| Impressão da ávore pré e pós inserção de teste-inserir.txt |
+
+Vale ressaltar também que à medida que as entradas são inseridas nos arquivos elas são arranjadas em ordem crescente, tendo o CPF como referência.
+
+| ![teste-inserir.png](./images/teste-inserir.png?width="400") | 
+|:--:| 
+| À esquerda o arquivo utilizado para testar inserções, teste-inserir.txt. À direita o arquivo 1600000000, em /arquivos.|
+
+<h3>Remoção</h3>
+
+Na opção 6, Testar remover a partir de teste-remover.txt, as entradas presentes no arquivo são removidas da árvore. Neste exemplo, conforme as entradas são removidas dos arquivos esses se tornam vazios e são, portanto, removidos de /arquivos, além obviamente de que sua respectiva chave é removida da árvore.
+
+| ![teste-remover.png](./images/teste-remover.png?width="400") | 
+|:--:| 
+| Arquivo teste-remover.txt com as chaves a serem removidas |
+
+| ![remocao.png](./images/remocao.png?width="400") | 
+|:--:| 
+| Note que após a remoção do último CPF 15194563598 do arquivo 14712514720 o arquivo fica vazio e, consequentemente, é removido de /arquivos e sua respectiva chave 14712514720 é removida da árvore |
+
+| ![arvore-antes-pos-remocao](./images/arvore-antes-pos-remocao.png?width="400") | 
+|:--:| 
+| Impressão da ávore pré e pós remoção de teste-remover.txt |
 
 <h2 align="left">Referências</h2>
 
