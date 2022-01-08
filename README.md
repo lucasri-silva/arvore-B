@@ -74,7 +74,7 @@ A pesquisa é feita a partir do CPF. Se encontrado, exibe a mensagem "CPF XXXXXX
 
 | ![teste-pesquisar.png](./images/teste-pesquisar.png?width="400") | 
 |:--:| 
-| À esquerda o arquivo teste-pesquisa.txt. À direita o output da pesquisa exibindo CPF,nome,idade dos registros pesquisados |
+| À esquerda o arquivo teste-pesquisa.txt. À direita o output da pesquisa exibindo CPF, nome, idade dos registros pesquisados |
 
 <h3>Inserção</h3>
 
@@ -92,7 +92,7 @@ Vale ressaltar também que à medida que as entradas são inseridas nos arquivos
 
 | ![teste-inserir.png](./images/teste-inserir.png?width="400") | 
 |:--:| 
-| À esquerda parte do arquivo utilizado para testar inserções, teste-inserir.txt. À direita o arquivo 1600000000, em /arquivos |
+| À esquerda parte do arquivo utilizado para testar inserções, teste-inserir.txt. À direita o arquivo 1600000000, em /arquivos, criado após as inserções |
 
 <h3>Remoção</h3>
 
