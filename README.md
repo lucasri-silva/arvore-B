@@ -45,7 +45,7 @@ Como conseqüência da definição:
 <h3>Descrição do problema:</h3>
 
 - criar uma tabela randômica de 1.000 entradas contendo CPF, nome e idade;
-- inserir as 1.000 entradas na árvore B, de ordem 2, subdividindo-as em chaves (arquivos) que devem conter 1-10 entradas;
+- inserir as 1.000 entradas na árvore B, de ordem 2, subdividindo-as em chaves, cada qual representa um arquivo contendo de 1-10 entradas;
 - prover um menu que consiga Inserir, Remover e Pesquisar pessoas nesse grupo de arquivos, mantendo a integridade da estrutura e tamanho máximo do arquivo.
 
 <h3>Implementação:</h3>
