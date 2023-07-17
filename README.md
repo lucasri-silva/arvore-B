@@ -1,6 +1,9 @@
-<h1 align="center">Árvore B</h1>
+<html>
+<body>
+    <h1 align="center">Árvore B</h1>
+      <p align="center">Implementação da árvore B em banco de dados contendo Cadastro de Pessoa Física (CPF).</p>
 
-<p align="center">Implementação da árvore B em banco de dados contendo Cadastro de Pessoa Física (CPF)</p>
+<h2 align="left">Compilação e Execução</h2>
 
 | OS: Ubuntu 20.04.2 LTS | Compilador: gcc version 9.3.0 |
                 
